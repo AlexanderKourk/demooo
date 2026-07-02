@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Για την Αγάπη μου</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #fef08a);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #334155;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        button, a.btn {
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .flower-btn {
+            background-color: #FFC0CB;
+            color: white;
+        }
+
+        .flower-btn:hover {
+            background-color: #FFC0CB;
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Είσαι ένας τεράστιος κήπος με λουλούδια που κάθε φορά που τον βλέπω ζεσταίνεται η καρδούλα μουυυ μωράκι μουυυυ</h1>
+
+    <div class="button-container">
+        <!-- Button 1: Links to an image of a field of flowers -->
+        <a href="image.png" target="_blank" class="btn flower-btn">Δες τι σημαίνεις για εμένα μωρό μου</a>
+    </div>
+</body>
+
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f1a; /* Dark background so the red/pink hearts pop */
+            overflow: hidden; /* Prevents scrollbars from appearing as hearts fall */
+            height: 100vh;
+        }
+
+        /* The style for each individual heart */
+        .heart {
+            position: absolute;
+            top: -20px; /* Start just above the screen */
+            font-size: 20px;
+            color: #ff4d6d;
+            user-select: none;
+            pointer-events: none; /* Prevents the hearts from blocking clicks on the page */
+            animation: fall linear forwards;
+        }
+
+        /* The falling animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                /* Moves the heart down past the bottom of the screen and spins it slightly */
+                transform: translateY(105vh) rotate(350deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Array of different heart emojis/symbols for variety
+        const heartStyles = ['❤️', '💖', '💗', '💓', '💝'];
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            // Randomly select a heart symbol
+            heart.innerText = heartStyles[Math.floor(Math.random() * heartStyles.length)];
+            
+            // Randomize horizontal positioning across the screen (0% to 100%)
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Randomize size (between 10px and 35px)
+            heart.style.fontSize = Math.random() * 25 + 10 + 'px';
+            
+            // Randomize fall duration (between 3 and 6 seconds) for natural variation
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            
+            // Add it to the page
+            document.body.appendChild(heart);
+            
+            // Automatically clean up and remove the heart element once its animation ends
+            setTimeout(() => {
+                heart.remove();
+            }, 6000); // Matches the maximum animation duration
+        }
+
+        // Generate a new heart every 300 milliseconds
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
